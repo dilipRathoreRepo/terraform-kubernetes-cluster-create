@@ -1,6 +1,6 @@
 # Terraform Kubernetes Cluster Create
 
-To create Kubernetes cluster via Jenkins pipeline using Terraform
+To create the Kubernetes cluster via Jenkins pipeline using Terraform
 
 ## Getting Started
 
