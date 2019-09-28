@@ -2,7 +2,7 @@
 
 To create the Kubernetes cluster via Jenkins pipeline using Terraform
 
-## Getting Started
+## Getting Start
 
 Set up google cloud sdk and copy service account credentials. Only service account path is mentioned on the system but account key itself is not uploaded to github. This job will be executed via Jenkins job 'Jenkins-terraform-cluster-create'
 
