@@ -15,7 +15,8 @@ node {
 
             stage('Terraform Plan') {
                 sh label: '', script: '/usr/local/bin/terraform init'
-                sh label: '', script: '/usr/local/bin/terraform plan'
+                sh label: '', script: "/usr/local/bin/terraform plan > output_${env.BUILD_NUMBER}"
+                sh label: '', script: "cat output_${env.BUILD_NUMBER}"
             }
             notify('Deploy to production ?')
             input 'Deploy to production?'
