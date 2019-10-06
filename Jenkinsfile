@@ -12,6 +12,12 @@ node {
                 sh label: '', script: '/usr/local/bin/terraform -version' 
             }
 
+            stage('Terraform Plan') {
+                sh label: '', script: '/usr/local/bin/terraform init'
+                sh label: '', script: '/usr/local/bin/terraform plan'
+            }
+            input 'Deploy to production?'
+
             stage('Build Terraform') {
                 sh label: '', script: '/usr/local/bin/terraform init'
                 sh label: '', script: '/usr/local/bin/terraform apply -auto-approve'
