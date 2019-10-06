@@ -16,7 +16,7 @@ Set up google cloud sdk and copy service account credentials.
 Clone this repo via Jenkins pipeline
 
 ```
-Give the example
+Give an example
 ```
 
 And repeat
