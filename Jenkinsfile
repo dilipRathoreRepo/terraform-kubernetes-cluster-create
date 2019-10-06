@@ -8,6 +8,7 @@ node {
             }
             
             stage('Setup Terraform') {
+                sh label: '', script: '/usr/local/bin/google-cloud-sdk/bin/gcloud config list'
                 sh label: '', script: 'export PATH=$PATH:/usr/local/bin'
                 sh label: '', script: '/usr/local/bin/terraform -version' 
             }
