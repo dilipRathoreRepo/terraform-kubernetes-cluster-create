@@ -10,7 +10,7 @@ resource "google_container_node_pool" "primary_nodes" {
   name       = var.node_pool_name
   location   = var.location
   cluster    = "${google_container_cluster.gke-cluster.name}"
-  node_count = 0 
+  node_count = 1 
 
   node_config {
     preemptible  = var.preemptible
