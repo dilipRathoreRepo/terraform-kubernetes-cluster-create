@@ -1,30 +1,25 @@
 resource "google_container_cluster" "gke-cluster" {
-  name               = "mycluster"
-  network            = "default"
-  location           = "us-central1"
-  remove_default_node_pool = true
-  initial_node_count = 1 
+  name               = var.cluster_name
+  network            = var.network
+  location           = var.location
+  remove_default_node_pool = var.remove_default_node_pool
+  initial_node_count = var.initial_node_count
 }
 
 resource "google_container_node_pool" "primary_nodes" {
-  name       = "my-node-pool"
-  location   = "us-central1"
+  name       = var.node_pool_name
+  location   = var.location
   cluster    = "${google_container_cluster.gke-cluster.name}"
   node_count = 1 
 
   node_config {
-    preemptible  = false
-    machine_type = "n1-standard-1"
+    preemptible  = var.preemptible
+    machine_type = var.machine_type
 
     metadata = {
       disable-legacy-endpoints = "true"
     }
 
-    oauth_scopes = [
-      "https://www.googleapis.com/auth/logging.write",
-      "https://www.googleapis.com/auth/monitoring",
-      "https://www.googleapis.com/auth/pubsub",
-      "https://www.googleapis.com/auth/bigquery"
-    ]
+    oauth_scopes = var.oauth_scopes
   }
 }
