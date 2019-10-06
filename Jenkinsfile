@@ -17,6 +17,7 @@ node {
                 sh label: '', script: '/usr/local/bin/terraform init'
                 sh label: '', script: '/usr/local/bin/terraform plan'
             }
+            notify('Deploy to production ?')
             input 'Deploy to production?'
 
             stage('Build Terraform') {
