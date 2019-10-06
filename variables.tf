@@ -6,10 +6,6 @@ variable "region" {
 	type = string
 	default = "europe-west1"
 }
-variable "credentials_path" {
-	type = string
-	default = "/Users/diliprathore/terraform/terraform-working/creds/serviceaccount.json"
-}
 variable "cluster_name" {
 	type = string
 	default = "mycluster"
