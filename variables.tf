@@ -24,7 +24,7 @@ variable "remove_default_node_pool" {
 }
 variable "initial_node_count" {
 	type = number
-	default = 1
+	default = 2
 }
 variable "node_pool_name" {
 	type = string
